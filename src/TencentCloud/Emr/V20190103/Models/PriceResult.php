@@ -18,23 +18,35 @@ namespace TencentCloud\Emr\V20190103\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 规则触发条件数组
+ * 询价结果
  *
- * @method array getConditions() 获取规则触发条件数组。
+ * @method float getOriginalCost() 获取原价
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setConditions(array $Conditions) 设置规则触发条件数组。
+ * @method void setOriginalCost(float $OriginalCost) 设置原价
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method float getDiscountCost() 获取折扣价
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setDiscountCost(float $DiscountCost) 设置折扣价
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class TriggerConditions extends AbstractModel
+class PriceResult extends AbstractModel
 {
     /**
-     * @var array 规则触发条件数组。
+     * @var float 原价
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Conditions;
+    public $OriginalCost;
 
     /**
-     * @param array $Conditions 规则触发条件数组。
+     * @var float 折扣价
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $DiscountCost;
+
+    /**
+     * @param float $OriginalCost 原价
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param float $DiscountCost 折扣价
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -50,13 +62,12 @@ class TriggerConditions extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Conditions",$param) and $param["Conditions"] !== null) {
-            $this->Conditions = [];
-            foreach ($param["Conditions"] as $key => $value){
-                $obj = new TriggerCondition();
-                $obj->deserialize($value);
-                array_push($this->Conditions, $obj);
-            }
+        if (array_key_exists("OriginalCost",$param) and $param["OriginalCost"] !== null) {
+            $this->OriginalCost = $param["OriginalCost"];
+        }
+
+        if (array_key_exists("DiscountCost",$param) and $param["DiscountCost"] !== null) {
+            $this->DiscountCost = $param["DiscountCost"];
         }
     }
 }
