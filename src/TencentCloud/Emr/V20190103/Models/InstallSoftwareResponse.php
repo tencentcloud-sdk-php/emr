@@ -18,19 +18,29 @@ namespace TencentCloud\Emr\V20190103\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateCloudInstance返回参数结构体
+ * InstallSoftware返回参数结构体
  *
- * @method string getInstanceId() 获取<p>实例ID</p>
- * @method void setInstanceId(string $InstanceId) 设置<p>实例ID</p>
+ * @method array getErrorMessages() 获取<p>校验错误信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setErrorMessages(array $ErrorMessages) 设置<p>校验错误信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method integer getFlowId() 获取<p>流程id</p>
+ * @method void setFlowId(integer $FlowId) 设置<p>流程id</p>
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateCloudInstanceResponse extends AbstractModel
+class InstallSoftwareResponse extends AbstractModel
 {
     /**
-     * @var string <p>实例ID</p>
+     * @var array <p>校验错误信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $InstanceId;
+    public $ErrorMessages;
+
+    /**
+     * @var integer <p>流程id</p>
+     */
+    public $FlowId;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +48,9 @@ class CreateCloudInstanceResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $InstanceId <p>实例ID</p>
+     * @param array $ErrorMessages <p>校验错误信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $FlowId <p>流程id</p>
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +66,12 @@ class CreateCloudInstanceResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
-            $this->InstanceId = $param["InstanceId"];
+        if (array_key_exists("ErrorMessages",$param) and $param["ErrorMessages"] !== null) {
+            $this->ErrorMessages = $param["ErrorMessages"];
+        }
+
+        if (array_key_exists("FlowId",$param) and $param["FlowId"] !== null) {
+            $this->FlowId = $param["FlowId"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
