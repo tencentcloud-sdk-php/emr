@@ -20,18 +20,18 @@ use TencentCloud\Common\AbstractModel;
 /**
  * DescribeDynamicInstanceList请求参数结构体
  *
- * @method string getInstanceId() 获取emr 集群 id
- * @method void setInstanceId(string $InstanceId) 设置emr 集群 id
+ * @method string getInstanceId() 获取<p>emr 集群 id</p>
+ * @method void setInstanceId(string $InstanceId) 设置<p>emr 集群 id</p>
  */
 class DescribeDynamicInstanceListRequest extends AbstractModel
 {
     /**
-     * @var string emr 集群 id
+     * @var string <p>emr 集群 id</p>
      */
     public $InstanceId;
 
     /**
-     * @param string $InstanceId emr 集群 id
+     * @param string $InstanceId <p>emr 集群 id</p>
      */
     function __construct()
     {
